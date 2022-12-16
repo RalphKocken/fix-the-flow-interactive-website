@@ -19,12 +19,12 @@
             <br>    
             <p>Meld je stekje hier aan en ruil ‘m via de app. Schrijf de Latijnse naam van je plant en eventuele verzorgingstips op een labeltje en neem ‘m mee naar de OBA Linnaeusstraat in Amsterdam.  
             </p>
-            <button class="main-button" onclick="dialogstekjeaanmelden.showModal()">Stekje Aanmelden</button>
+            <button class="main-button stekjeaanmeldenbutton">Stekje Aanmelden</button>
         </article>
     </header>   
 
     <dialog id="dialogstekjeaanmelden">       
-        <button class="close-dialog-button" onclick="dialogstekjeaanmelden.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+        <button class="close-dialog-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
         <img class="plant-swap-logo"src="assets/PlantSwap-logo.png">
         <form method="dialog" class="form-stekje-aanmelden">
             <label>Voornaam<input type="text" required></label>
@@ -43,47 +43,50 @@
 
             <ul class="filter-links">
                 <p>Verzorgingsniveau:</p>
-                <li><button class="eenvoudigButton verzorgings-niveau-button">Eenvoudig</button></li>
-                <li><button class="gemiddeldButton verzorgings-niveau-button">Gemiddeld</button></li>
-                <li><button class="gevorderdButton verzorgings-niveau-button">Gevorderd</button></li>
-                <li><button class="laatalleszienButton verzorgings-niveau-button" autofocus>Alle niveau's</button></li>
+                <li><button class="eenvoudigButton verzorgings-niveau-button" data-eenvoudig="on">Eenvoudig</button></li>
+                <li><button class="gemiddeldButton verzorgings-niveau-button" data-gemiddeld="on">Gemiddeld</button></li>
+                <li><button class="gevorderdButton verzorgings-niveau-button" data-gevorderd="on">Gevorderd</button></li>
+                <li><button class="laatalleszienButton verzorgings-niveau-button" autofocus data-gemiddeld="on" data-gevorderd="on" data-eenvoudig="on">Alle niveau's</button></li>
             </ul> 
             
-            <section class="stekjeslijst" id="stekjeslijst">
+            <section class="stekjeslijst">
+
                 <div class="stekje eenvoudig">
                     <img src="assets/plant(1).avif" alt="Orchidee">
-                    <button class="stekjes-meer-info-button" onclick="dialogorchidee.showModal()">Orchidee</button>
+                    <button class="stekjes-meer-info-button" data-orchidee="on">Orchidee</button>
 
                     <dialog class="dialogstekjeslijst" id="dialogorchidee">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(1).avif" alt="Orchidee">
-                            <button class="close-dialog-stekjes-button" onclick="dialogorchidee.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Orchidee</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
-                                <button class="main-button" onclick="dialogreserveren.showModal()">Doe mij deze maar</button>
+                                <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="stekje-aanmelden-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
-
-                        <dialog class= "dialog-reserveren" id="dialogreserveren">
-                            <form method="dialog">
-                                <input type="text">
-                            </form>
-                        </dialog>
-
                     </dialog>
                 </div>
                 
-                <div class="stekje gevorderd">
+                <div class="stekje eenvoudig">
                     <img src="assets/plant(2).avif" alt="Kale Jonker">
-                    <button class="stekjes-meer-info-button" onclick="dialogkalejonker.showModal()">Kale Jonker</button>
+                    <button class="stekjes-meer-info-button">Kale Jonker</button>
 
-                    <dialog class="dialogstekjeslijst" id="dialogkalejonker">
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(2).avif" alt="Kale Jonker">
-                            <button class="close-dialog-stekjes-button" onclick="dialogkalejonker.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Kale Jonker</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -93,14 +96,15 @@
                     </dialog>
                 </div> 
 
-                <div class=" stekje gemiddeld">
+                <div class="stekje gemiddeld">
                     <img src="assets/plant(3).avif" alt="Duifkruid">
-                    <button class="stekjes-meer-info-button" onclick="dialogduifkruid.showModal()">Duifkruid</button>
-                    <dialog class="dialogstekjeslijst" id="dialogduifkruid">
+                    <button class="stekjes-meer-info-button">Duifkruid</button>
+
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(3).avif" alt="Kale Jonker">
-                            <button class="close-dialog-stekjes-button" onclick="dialogduifkruid.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Duifkruid</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -110,14 +114,14 @@
                     </dialog>
                 </div>
 
-                <div class="stekje eenvoudig">
+                <div class="stekje gemiddeld">
                     <img src="assets/plant(4).avif" alt="Longkruid">
-                    <button class="stekjes-meer-info-button" onclick="dialoglongkruid.showModal()">Longkruid</button>
-                    <dialog class="dialogstekjeslijst" id="dialoglongkruid">
+                    <button class="stekjes-meer-info-button">Longkruid</button>
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(4).avif" alt="Longkruid">
-                            <button class="close-dialog-stekjes-button" onclick="dialoglongkruid.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Longkruid</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -127,14 +131,14 @@
                     </dialog>
                 </div> 
 
-                <div class="stekje gevorderd">
+                <div class="stekje gemiddeld">
                     <img src="assets/plant(5).avif" alt="Bieslook">
-                    <button class="stekjes-meer-info-button" onclick="dialogbieslook.showModal()">Bieslook</button>
-                    <dialog class="dialogstekjeslijst" id="dialogbieslook">
+                    <button class="stekjes-meer-info-button">Bieslook</button>
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(5).avif" alt="Bieslook">
-                            <button class="close-dialog-stekjes-button" onclick="dialogbieslook.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Bieslook</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -144,14 +148,14 @@
                     </dialog>
                 </div> 
 
-                <div class="stekje eenvoudig">
+                <div class="stekje gevorderd">
                     <img src="assets/plant(6).avif" alt="Zonnebloem">
-                    <button class="stekjes-meer-info-button" onclick="dialogzonnebloem.showModal()">Zonnebloem</button>
-                    <dialog class="dialogstekjeslijst" id="dialogzonnebloem">
+                    <button class="stekjes-meer-info-button">Zonnebloem</button>
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(6).avif" alt="Zonnebloem">
-                            <button class="close-dialog-stekjes-button" onclick="dialogzonnebloem.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Zonnebloem</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -161,14 +165,14 @@
                     </dialog>
                 </div> 
 
-                <div class="stekje gemiddeld">
+                <div class="stekje gevorderd">
                     <img src="assets/plant(7).avif" alt="Cactus">
-                    <button class="stekjes-meer-info-button" onclick="dialogcactus.showModal()">Cactus</button>
-                    <dialog class="dialogstekjeslijst" id="dialogcactus">
+                    <button class="stekjes-meer-info-button">Cactus</button>
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(7).avif" alt="Cactus">
-                            <button class="close-dialog-stekjes-button" onclick="dialogcactus.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Cactus</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -180,12 +184,12 @@
 
                 <div class="stekje eenvoudig">
                     <img src="assets/plant(8).avif" alt="Paardenbloem">
-                    <button class="stekjes-meer-info-button" onclick="dialogpaardenbloem.showModal()">Paardenbloem</button>
-                    <dialog class="dialogstekjeslijst" id="dialogpaardenbloem">
+                    <button class="stekjes-meer-info-button">Paardenbloem</button>
+                    <dialog class="dialogstekjeslijst">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(8).avif" alt="Paardenbloem">
-                            <button class="close-dialog-stekjes-button" onclick="dialogpaardenbloem.close()"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Paardenbloem</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
@@ -194,7 +198,6 @@
                         </section>
                     </dialog>
                 </div> 
-
             </section>
 
         </div>

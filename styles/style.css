@@ -228,13 +228,17 @@ dialog{
     width: 1em;
 }
 
-.stekjeslijst > div{
+.stekje{
     position: relative;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.plant-no-display{
+    display: none; 
 }
 
 .stekjeslijst > div > img{
@@ -257,6 +261,16 @@ dialog{
 .stekjes-meer-info-button:hover{
     background-color: #F26f20;
     color: white;
+}
+
+.stekje-reserveren-form{
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+}
+
+.stekje-reserveren-form input{
+    width: 100%;
 }
 
 .verzorgingstips{
