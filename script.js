@@ -6,33 +6,54 @@ const simplePlants = document.querySelectorAll(".eenvoudig");
 const moderatePlants = document.querySelectorAll(".gemiddeld");
 const hardPlants = document.querySelectorAll(".gevorderd");
 const filterButtons = document.querySelectorAll('.verzorgings-niveau-button');
-const dialogStekjes = document.querySelectorAll('.dialogstekjeslijst');
+let dialogStekjes = document.querySelectorAll('.dialogstekjeslijst');
 const meerInfoButtons = document.querySelectorAll('.stekjes-meer-info-button');
-console.log(meerInfoButtons)
-console.log(dialogStekjes)
+const closePlantDialogButton = document.querySelectorAll(".close-dialog-stekjes-button");
+const reservePlantButton = document.querySelector('.stekje-reserveren-button');
+const reservePlantForm = document.querySelector('.stekje-reserveren-form')
+const choosePlant = document.querySelector('#kies-plantje-button')
+const orchidee = document.querySelector('.orchidee')
 
 //eventListener
 
-openDialogSignUpPlant.addEventListener("click", openDialog);
-closeDialogSignUpPlant.addEventListener("click", closeDialog);
+closeDialogSignUpPlant.addEventListener('click', closeDialog)
+openDialogSignUpPlant.addEventListener('click', openDialog)
+reservePlantButton.addEventListener('click', getPlantHandler)
+choosePlant.addEventListener('click', choosePlantHandler)
 
 for (const filterbutton of filterButtons) {
   filterbutton.addEventListener('click', showPlants);
 }
 
-for(const meerInfoButton of meerInfoButtons){
-  meerInfoButton.addEventListener('click', showDialog)
-}
-
+meerInfoButtons.forEach(button =>{
+  button.addEventListener('click', showPlantDialog)
+})
+ 
+closePlantDialogButton.forEach(button =>{
+  button.addEventListener('click', closePlantDialog)
+})
 
 //functions
-
 function openDialog(){
-  dialogSignUpPlant.showModal();  
+  dialogSignUpPlant.showModal()
 }
 
 function closeDialog(){
-  dialogSignUpPlant.close();
+  dialogSignUpPlant.close()
+}
+
+
+function closePlantDialog(){
+  dialogStekjes.forEach(dialog =>{
+    if (dialog.open){
+      dialog.classList.add('hideDialog')
+      dialog.addEventListener('animationend', () =>{
+        dialog.close()
+        dialog.classList.remove('hideDialog')    
+      },{once : true});
+    }
+  })
+  reservePlantForm.classList.remove('stekje-reserveren-form-show')
 }
 
 function showPlants() {
@@ -63,120 +84,30 @@ function showPlants() {
     }
   }
 }
-
-function showDialog(){
-  for(const dialogorchidee of dialogStekjes){
-    if(this.dataset.orchidee == 'on'){
-      dialogorchidee.showModal()
-    }
-    else(
-      dialogorchidee.close()
-    )
-  }
-}
-
-
-
-/*
   
-let dialog = document.querySelector(".dialogstekjeslijst-orchidee");
-let openDialog = document.querySelector(".stekjes-meer-info-button");
-let closeDialog = document.querySelector(".close-dialog-stekjes-button");
-
-
-let eenvoudig = document.querySelectorAll(".eenvoudig");
-let gemiddeld = document.querySelectorAll(".gemiddeld");
-let gevorderd = document.querySelectorAll(".gevorderd");
-
-// alle stekjes
-let stekjesTotaal = document.querySelector(".stekjeslijst")
-let eenvoudigButton = document.querySelector(".eenvoudigButton");
-let gemiddeldButton = document.querySelector(".gemiddeldButton");
-let gevorderdButton = document.querySelector(".gevorderdButton");
-let laatalleszienButton = document.querySelector(".laatalleszienButton");
-let stekjeaanmeldenconfirm = document.querySelector(".stekje-aanmelden-button");
-
-
-// VOORBEELD VAN JUSTUS//
-
-// easyPlants.forEach((plant) => {
-//   plant.addEventListener("click", plantHandler);
-// });
-
-// function plantHandler (event) {
-//   event.target.classlist.toggle('visible');
-// }
-
-// document.querySelectorAll(".eenvoudig").forEach((plant) => {
-//   plant.addEventListener("click",  (event) => {
-//     event.target.classlist.toggle('visible')
-//   }
-// }
-
-
-// functie voor het filteren van de stekjes
-function removeAll(){
-  eenvoudig.forEach(element => {
-    element.style.display = "none";
-  });
-  gemiddeld.forEach(element => {
-    element.style.display = "none";
-  });
-  gevorderd.forEach(element => {
-    element.style.display = "none";
-  });
-}
-
-//functie voor het laten zien van alle stekjes
-function laatalleszien(){
-  eenvoudig.forEach(element => {
-    element.style.display = "flex";
-  });
-  gemiddeld.forEach(element => {
-    element.style.display = "flex";
-  });
-  gevorderd.forEach(element => {
-    element.style.display = "flex";
-
-    });
-}
-
-// eenvoudig knop
-eenvoudigButton.addEventListener("click", eenvoudigShow);
-
-function eenvoudigShow(){
-  removeAll();
-  eenvoudig.forEach(element => {
-    element.style.display = "flex";
-  });
-}
-
-//gemiddeld knop
-gemiddeldButton.addEventListener("click", gemiddeldShow);
-
-function gemiddeldShow(){
-  removeAll();
-  gemiddeld.forEach(element => {
-    element.style.display = "flex";
-  });
-}
-
-//gevorderd knop//
-gevorderdButton.addEventListener("click", gevorderdShow);
-
-function gevorderdShow(){
-  removeAll();
-  gevorderd.forEach(element => {
-    element.style.display = "flex";
-  });
-}
-
-//laatalleszien knop
-laatalleszienButton.addEventListener("click", laatalleszienShow);
-  function laatalleszienShow(){
-    laatalleszien();
+  function showPlantDialog(event){
+    // meerInfoButtons.forEach(button => {
+      const dialog = document.getElementById(event.target.dataset.id)
+      // console.log(button);
+      if (dialog && dialog.open == true) {
+        dialog.close()
+      } else {
+        dialog.showModal()
+      }
+      reservePlantButton.classList.remove('stekje-reserveren-button-hidden')
   }
 
+  function getPlantHandler(){
+    reservePlantForm.classList.add('stekje-reserveren-form-show')
+    reservePlantButton.classList.add('stekje-reserveren-button-hidden')
+  }
+
+  function choosePlantHandler(){
+    orchidee.remove('orchidee')
+  }
+
+
+// EXPERIMENT // CODE VAN KRIJN // NOG GOED DOORLEZEN
 
   var meldJePlantAanButton = document.getElementById('header-article > button')
   var plaatjeAanmeldenDialog = document.getElementById('dialogstekjeaanmelden')
@@ -198,5 +129,3 @@ laatalleszienButton.addEventListener("click", laatalleszienShow);
   
     eenKloon.scrollIntoView()
   })
-
-  */

@@ -9,7 +9,6 @@
     --background-color:#333467;
     --button-color: #333467;
     --button-hover-color: #F26f20;
-    
 }
 
 @font-face {
@@ -73,10 +72,36 @@ dialog{
     box-shadow: 0 0 10px;
 }
 
+dialog[open]{
+    animation: slideDialog 0.3s ease-out;
+}
+
+@keyframes slideDialog{
+    from {
+        transform: translateY(-110%)
+    }
+    to{
+        transform: translateY(0%)
+    }   
+}
+
+dialog.hideDialog{
+    animation: hideDialog 0.3s ease-out forwards;
+}
+
+@keyframes hideDialog{
+    from{
+        transform: translateY(0%)
+    }
+    to {
+        transform: translateY(-110%)
+    }
+}
+
 #dialogstekjeaanmelden{
     width: 90%;
     max-width: 30rem;
-    border-radius: 5px;
+    border-radius: 5px; 
     margin: auto;
 }
 
@@ -85,6 +110,10 @@ dialog{
     background-color: transparent;
     border: none;
     padding: 0;
+}
+
+.close-dialog-button:hover{
+    opacity: 70%;
 }
 
 .dialog-close-button-img{
@@ -137,6 +166,11 @@ dialog{
     background-color: transparent;
     border: none;
     left: 85%;
+    transition: all 0.1s linear 0s;
+}
+
+.close-dialog-stekjes-button:hover{
+    opacity: 70%;
 }
 
 .dialog-reserveren{
@@ -153,16 +187,12 @@ dialog{
     color: white;
     font-size: 1.2em;
     margin-top: 1em;
+    transition: all 0.1s linear 0s;
 }
 
 .main-button:hover{
     background-color: #F26f20;
     border: none;
-}
-
-#stekje-aanmelden-button{
-    width: 10em;
-    margin: 2em auto 2em auto;
 }
 
 .container{
@@ -189,13 +219,11 @@ dialog{
     width: 7em;
     color: var(--secondarytextcolor);
     border-radius: 5px; 
+    transition: all 0.1s linear 0s;
+
 }
 
 .verzorgings-niveau-button:hover{
-    background-color: var(--button-hover-color);
-}
-
-.container > ul > li > button:focus{
     background-color: var(--button-hover-color);
 }
 
@@ -238,7 +266,7 @@ dialog{
 }
 
 .plant-no-display{
-    display: none; 
+    display: none;
 }
 
 .stekjeslijst > div > img{
@@ -256,6 +284,7 @@ dialog{
     border-radius: 0.5em;
     width: 80%;
     height: 10%;
+    transition: all 0.1s linear 0s;
 }
 
 .stekjes-meer-info-button:hover{
@@ -264,13 +293,21 @@ dialog{
 }
 
 .stekje-reserveren-form{
-    display: flex;
-    visibility: hidden;
+    display: none;
     flex-direction: column;
+    margin-top: 2em;
+}
+
+.stekje-reserveren-form-show{
+    display: flex;
 }
 
 .stekje-reserveren-form input{
     width: 100%;
+}
+
+.stekje-reserveren-button-hidden{
+    display: none;
 }
 
 .verzorgingstips{
@@ -367,6 +404,7 @@ footer img{
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
+        align-items: flex-start;
     }
 
     .stekjeslijst{
@@ -415,6 +453,12 @@ footer img{
     .close-dialog-stekjes-button{
         left: 92%;
         top: 2%;
+        transition: all 0.1s linear 0s;
+    }
+
+    .verzorgingstips{
+        margin-bottom: 2em;
+        padding: 3em;
     }
 
 }

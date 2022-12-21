@@ -39,7 +39,7 @@
 
     <main> 
         <div class="container">
-            <h2>Beschikbare stekjes</h2>
+            <h2>Onze stekjes</h2>
 
             <ul class="filter-links">
                 <p>Verzorgingsniveau:</p>
@@ -51,26 +51,25 @@
             
             <section class="stekjeslijst">
 
-                <div class="stekje eenvoudig">
+                <div class="stekje eenvoudig orchidee">
                     <img src="assets/plant(1).avif" alt="Orchidee">
-                    <button class="stekjes-meer-info-button" data-orchidee="on">Orchidee</button>
-
+                    <button class="stekjes-meer-info-button" data-id="dialogorchidee">Orchidee</button>
                     <dialog class="dialogstekjeslijst" id="dialogorchidee">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(1).avif" alt="Orchidee">
-                            <button class="close-dialog-stekjes-button"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
+                            <button class="close-dialog-stekjes-button" id="dialogorchidee"><img class="dialog-close-button-img" src="assets/closebtn.png"></button>
                             <div class="dialog-stekjes-info">
                                 <h3>Orchidee</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
-                                <button class="main-button">Doe mij deze maar</button>
+                                <button class="main-button stekje-reserveren-button">Doe mij deze maar</button>
                                 <section>
                                     <form class="stekje-reserveren-form">
                                         <label>Voornaam<input type="text" required></label>
                                         <label>Achternaam<input type="text" required></label>
                                         <label>E-mail<input type="email" required></label>
                                         <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
-                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="stekje-aanmelden-button">
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
                                     </form>
                                 </section>
                             </div>
@@ -80,9 +79,8 @@
                 
                 <div class="stekje eenvoudig">
                     <img src="assets/plant(2).avif" alt="Kale Jonker">
-                    <button class="stekjes-meer-info-button">Kale Jonker</button>
-
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialogkalejonker">Kale Jonker</button>
+                    <dialog class="dialogstekjeslijst" id="dialogkalejonker">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(2).avif" alt="Kale Jonker">
@@ -91,6 +89,15 @@
                                 <h3>Kale Jonker</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
@@ -98,9 +105,8 @@
 
                 <div class="stekje gemiddeld">
                     <img src="assets/plant(3).avif" alt="Duifkruid">
-                    <button class="stekjes-meer-info-button">Duifkruid</button>
-
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialogduifkruid">Duifkruid</button>
+                    <dialog class="dialogstekjeslijst" id="dialogduifkruid">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(3).avif" alt="Kale Jonker">
@@ -109,6 +115,15 @@
                                 <h3>Duifkruid</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
@@ -116,8 +131,8 @@
 
                 <div class="stekje gemiddeld">
                     <img src="assets/plant(4).avif" alt="Longkruid">
-                    <button class="stekjes-meer-info-button">Longkruid</button>
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialoglongkruid">Longkruid</button>
+                    <dialog class="dialogstekjeslijst" id="dialoglongkruid">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(4).avif" alt="Longkruid">
@@ -126,6 +141,15 @@
                                 <h3>Longkruid</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
@@ -133,8 +157,8 @@
 
                 <div class="stekje gemiddeld">
                     <img src="assets/plant(5).avif" alt="Bieslook">
-                    <button class="stekjes-meer-info-button">Bieslook</button>
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialogbieslook">Bieslook</button>
+                    <dialog class="dialogstekjeslijst" id="dialogbieslook">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(5).avif" alt="Bieslook">
@@ -143,6 +167,15 @@
                                 <h3>Bieslook</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
@@ -150,8 +183,8 @@
 
                 <div class="stekje gevorderd">
                     <img src="assets/plant(6).avif" alt="Zonnebloem">
-                    <button class="stekjes-meer-info-button">Zonnebloem</button>
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialogzonnebloem">Zonnebloem</button>
+                    <dialog class="dialogstekjeslijst" id="dialogzonnebloem">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(6).avif" alt="Zonnebloem">
@@ -160,6 +193,15 @@
                                 <h3>Zonnebloem</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
@@ -167,8 +209,8 @@
 
                 <div class="stekje gevorderd">
                     <img src="assets/plant(7).avif" alt="Cactus">
-                    <button class="stekjes-meer-info-button">Cactus</button>
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialogcactus">Cactus</button>
+                    <dialog class="dialogstekjeslijst" id="dialogcactus">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(7).avif" alt="Cactus">
@@ -177,6 +219,15 @@
                                 <h3>Cactus</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
@@ -184,8 +235,8 @@
 
                 <div class="stekje eenvoudig">
                     <img src="assets/plant(8).avif" alt="Paardenbloem">
-                    <button class="stekjes-meer-info-button">Paardenbloem</button>
-                    <dialog class="dialogstekjeslijst">
+                    <button class="stekjes-meer-info-button" data-id="dialogpaardenbloem">Paardenbloem</button>
+                    <dialog class="dialogstekjeslijst" id="dialogpaardenbloem">
                         <section> 
                             <img class="plant-swap-logo dialog-logo" src="assets/PlantSwap-logo.png" alt="plantswap logo">
                             <img class="dialog-stekjes-img"src="assets/plant(8).avif" alt="Paardenbloem">
@@ -194,6 +245,15 @@
                                 <h3>Paardenbloem</h3>
                                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam illo ex veritatis eaque odio natus nam aliquam rerum aut reiciendis impedit voluptatibus rem quae, reprehenderit omnis corporis culpa cum, a iure similique? Laborum, cumque.</p>
                                 <button class="main-button">Doe mij deze maar</button>
+                                <section>
+                                    <form class="stekje-reserveren-form">
+                                        <label>Voornaam<input type="text" required></label>
+                                        <label>Achternaam<input type="text" required></label>
+                                        <label>E-mail<input type="email" required></label>
+                                        <label>Telefoonummer<input type="tel" maxlength="10" minlength="10"></label>
+                                        <input type="submit" value="Stekje Reseveren" class="main-button" id="kies-plantje-button">
+                                    </form>
+                                </section>
                             </div>
                         </section>
                     </dialog>
