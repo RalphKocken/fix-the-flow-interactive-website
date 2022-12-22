@@ -216,7 +216,7 @@ dialog.hideDialog{
     background-color: var(--background-color);
     border: none;
     height: 2em;
-    width: 7em;
+    width: 8em;
     color: var(--secondarytextcolor);
     border-radius: 5px; 
     transition: all 0.1s linear 0s;
@@ -283,12 +283,13 @@ dialog.hideDialog{
     position: absolute;
     top: 83%;
     background-color: white;
+    color: var(--maintextcolor);
     font-size:medium;
     font-weight: 700;
     border: none;
     border-radius: 0.5em;
-    width: 80%;
-    height: 10%;
+    width: 90%;
+    height: 12%;
     transition: all 0.1s linear 0s;
 }
 
