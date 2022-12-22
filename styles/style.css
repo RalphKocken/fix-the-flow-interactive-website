@@ -227,6 +227,11 @@ dialog.hideDialog{
     background-color: var(--button-hover-color);
 }
 
+
+.verzorgings-niveau-button:focus{
+    background-color: var(--button-hover-color);
+}
+
 .container > ul > p{
     text-align: center;
     width: 100%;
