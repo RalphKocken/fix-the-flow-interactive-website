@@ -337,6 +337,157 @@ dialog.hideDialog{
     padding-top: 0;
 }
 
+.section-growing-plant{
+    margin-top: 2em;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.plant{
+    position: absolute;
+    top: 80%;
+    width: 10%;
+}
+
+.sunflower{
+    position: absolute;
+    width:  0%;
+    top: 75%;
+    z-index: 1;
+}
+
+.sunflower-stalck{
+    position: absolute;
+    width: 2%;
+    height: 40%;
+    top: 80%;
+}
+
+.plant-pot{
+    width: 30%;
+    height: 15%;
+    position: absolute;
+    top: 85%;
+    z-index: 1;
+}
+
+.watering-can{
+    position: absolute;
+    width: 30%;
+    left: 30%;
+    top: 15%;
+}
+
+.droplet{
+    position: absolute;
+    width: 5%;
+    opacity: 0;
+}
+
+.droplet1{
+    position: absolute;
+    top: 35%;
+    left: 45%;
+}
+
+.droplet2{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+}
+
+.droplet3{
+    position: absolute;
+    top: 35%;
+    left: 45%;
+}
+
+.droplet4{
+    position: absolute;
+    top: 35%;
+    left: 50%;
+}
+
+.growPlant{
+    animation: growPlant 2s linear 3s forwards;
+}
+
+.growStalck{
+    animation: growStalck 2s linear 3s forwards;    
+}
+
+.growSunflower{
+    animation: growSunflower 2s ease-out 3s forwards;
+}
+
+.waterPlant{
+    animation: waterPlants 2s linear forwards;
+}
+
+.dropDroplet1{
+    animation: dropWater 1s ease-in 1s forwards;
+}
+
+.dropDroplet2{
+    animation: dropWater 1s ease-in 1.1s forwards;
+}
+
+.dropDroplet3{
+    animation: dropWater 1s ease-in 1.2s forwards;
+}
+
+.dropDroplet4{
+    animation: dropWater 1s ease-in 1.3s forwards;
+}
+
+@keyframes growPlant {
+
+    100%{
+        transform: translateY(-45%) scale(2);
+    }
+}
+
+@keyframes growStalck{
+    100%{
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes growSunflower{
+    20%{
+        width: 0%;
+    }
+
+    100%{
+        transform: translateY(-160%);
+        width: 20%;
+    }
+}
+
+@keyframes waterPlants{
+    40%{
+        transform: rotate(90deg) translateX(-10%);
+    }
+    80%{
+        transform: rotate(90deg) translateX(-10%);
+    }
+}
+
+@keyframes dropWater{
+    20%{
+        opacity: 100%;
+    }
+    100%{
+        transform: translateY(1900%);
+        opacity: 100%;
+    }
+}
+
 .content{
     display: flex;
     flex-direction: column;
@@ -462,9 +613,21 @@ footer img{
         transition: all 0.1s linear 0s;
     }
 
+    .section-growing-plant{
+        margin-top: 0;
+    }
+
     .verzorgingstips{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
         margin-bottom: 2em;
         padding: 3em;
+    }
+
+    .verzorgingstips > h2{
+        width: 100%;
     }
 
 }

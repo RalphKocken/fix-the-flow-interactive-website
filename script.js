@@ -129,3 +129,32 @@ function showPlants() {
   
     eenKloon.scrollIntoView()
   })
+
+//PLANT ANIMATION//
+
+const growButton = document.querySelector('.grow-button')
+const plant = document.querySelector('.plant')
+const sunflower = document.querySelector('.sunflower')
+const sunflowerstalck = document.querySelector('.sunflower-stalck')
+const wateringcan = document.querySelector('.watering-can')
+const droplet1 = document.querySelector('.droplet1')
+const droplet2 = document.querySelector('.droplet2')
+const droplet3 = document.querySelector('.droplet3')
+const droplet4 = document.querySelector('.droplet4')
+
+growButton.addEventListener('click', growPlantHandler)
+growButton.addEventListener('animationend', growPlantHandler)
+
+console.log(growButton)
+console.log(plant)
+
+function growPlantHandler(){
+    plant.classList.toggle('growPlant')
+    sunflowerstalck.classList.toggle('growStalck')
+    sunflower.classList.toggle('growSunflower')
+    wateringcan.classList.toggle('waterPlant')
+    droplet1.classList.toggle('dropDroplet1')
+    droplet2.classList.toggle('dropDroplet2')
+    droplet3.classList.toggle('dropDroplet3')
+    droplet4.classList.toggle('dropDroplet4')
+}
