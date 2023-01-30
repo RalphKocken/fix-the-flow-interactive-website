@@ -1,8 +1,4 @@
-# fix-the-flow-interactive-website
-Ontwerp en maak een interactieve website voor een opdrachtgever.
-
-
-## User Story 
+# De Stekjesbieb!
 
 “Als buurtbewoner van Amsterdam Oost wil ik kunnen filteren in de stekjes, om de moeilijkheidsgraad van het verzorgen van een plant te kunnen zien”
 
